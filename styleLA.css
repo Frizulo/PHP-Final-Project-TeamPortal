@@ -1,0 +1,156 @@
+
+/* 表單相關 */
+form{
+    display: flex;
+    flex-direction: column;
+}
+input{
+    padding: 6px;
+}
+
+.btn-primary{
+    background-color: #9BB4B3;
+    border-color: #9BB4B3;
+    transition: 0.2s ease-out;
+}
+.btn-primary:hover{
+    background-color: #385858;
+    border-color: #385858;
+}
+/* 框框顏色 */
+.form-control{
+    border-color: #385858;
+}
+
+/* 點擊輸入發光 */
+.form-control:focus{
+    border-color: #9BB4B3;
+    box-shadow: 0 0 0 0.25rem #9BB4B3;
+}
+/* 點選的 */
+.form-check-input{
+    border-color: #385858;
+}
+
+/* 輸入發光 */
+.form-check-input:focus{
+    border-color: #9BB4B3;
+    box-shadow: 0 0 0 0.25rem #9BB4B3;
+}
+
+.form-check-input:checked{
+    border-color: #9BB4B3;
+    background-color: #9BB4B380;
+}
+
+/* error */
+.error{
+    border: 2px solid red;
+    background-color: #ffeeee;
+}
+
+/* 其他 */
+
+.bd{
+    margin: 10px;
+    padding: 1rem 2rem;
+    background-color: #EFF1E4;
+    border-radius: 1rem 1rem 0 1rem;  /* 圓角 右下角除外 */
+    box-shadow: 3px 4px 4px  rgba(0, 0, 0, 0.25);  /* 外陰影 */
+}
+
+
+.blkbg{
+    background-color: #36382E;
+    color: #EFF1E4;
+    text-align: center; 
+    width: 400px;
+}
+.blkbg h2{
+    padding: 20px;
+    background-color: #EFF1E4;
+    color:#36382E;
+    margin-top: 10px;
+    font-size: 2rem;
+    border-radius: 15px 15px 0 15px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25) inset;
+}
+
+.boot{  
+    gap:1vw;
+    min-height: 88vh;
+    height: auto;
+    min-width: 458px;
+    width: 88vw;
+    margin: 20px;
+    padding: 20px;
+    background-color: #b8cfce;
+    border-radius: 20px;
+    box-shadow: -4px -4px 4px 0px rgba(0, 0, 0, 0.25) inset, 4px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
+}
+@media screen and (max-width:600px) {
+    .btn1,.btn2{
+        font-size: 1rem;
+    }
+}
+
+.folder-container{
+    display: flex;
+    flex-direction: row;
+}  
+.folder{
+    color:#36382E;
+    font-size: 1.125rem;
+    cursor: pointer;
+    user-select: none;
+    margin-right: 20px;
+    padding: 8px 16px;
+    background-color: #EFF1E4;
+    border-radius: 20px 20px 0 0;
+    border-top: 0.125rem solid #36382E;
+    border-right: 0.125rem solid #36382E;
+    border-left: 0.125rem solid #36382E;
+    transition: 0.3s ease;
+}
+.folder:hover{
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+#folder2{
+    margin-bottom: 0.125rem;
+    background-color: #9BB4B3;
+}
+
+.folder-content{
+    margin-top: -0.125rem;
+    padding: 10px 20px;
+    background-color: #EFF1E4;
+    border: 1px solid #ddd;
+    border-top: none;
+    border-radius: 0 20px 20px 20px;
+    border: 0.125rem solid #36382E;
+    min-height: 380px;
+    width: 400px;
+}
+.folder-content>h1{
+    font-size: 2rem;
+    margin-bottom: 0;
+    margin-top: 10px;
+}
+
+.scroll-y-only{
+    height: 280px;
+    overflow: scroll;
+    overflow-x: hidden;
+    padding: 0 10px 0 5px;
+}
+@media screen and (max-width:520px) {
+    body{
+        min-width: 520px;
+        overflow-x: auto;
+    }
+    .boot{
+        min-height: 100vh;
+    }
+    
+}

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>https://web.nttu.edu.tw/c02/</loc>
+        <lastmod>2024-04-20</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://web.nttu.edu.tw/c02/contact_us.html</loc>
+        <lastmod>2024-04-20</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://web.nttu.edu.tw/c02/private/bulletin.html</loc>
+        <lastmod>2024-04-20</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <!-- 其他 URL -->
+</urlset>

@@ -1,0 +1,172 @@
+.book{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes book-bounce{
+  0% { transform: translateY(0); }
+  40% { transform: translateY(-10px); }
+  80% { transform: translateY(0); }
+  100% { transform: translateY(0); }
+}
+
+@keyframes shelf-lift{
+  0% { transform: translateY(0) rotate(0); }
+  20% { transform: translateY(-4px) rotate(10deg); }
+  40% { transform: translateY(-4px) rotate(0); }
+  40% { transform: translateY(-4px) rotate(-10deg); }
+  80% { transform: translateY(0); }
+  100% { transform: translateY(0); }
+}
+
+.book-shelf:hover{
+  cursor: pointer;
+  
+  .book-shelf__book{
+    animation: book-bounce 0.4s ease;
+    animation-iteration-count: 1;
+  }
+  
+  .book-shelf__book--two{
+    animation-delay: 0.04s;
+  }
+
+  .book-shelf__book--three{
+    animation-delay: 0.08s;
+  }
+  
+  .book-shelf__shelf{
+    animation: shelf-lift 0.4s ease;
+    animation-iteration-count: 1;
+    transform-origin: 50% 50%;
+  }
+}
+
+
+/* 滾動條改樣式 */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #DEE3C780;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: #9BB4B3;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #385858;
+  cursor: pointer;
+}
+
+body{
+  font-family: Arial, sans-serif;
+  background-color: #ecfcfb;
+  color: #333;
+}
+h1, h2, h3{
+  color: #fa824c;
+  display: flex; 
+  justify-content: center; 
+  align-items: center;
+}
+h2{
+  color: #fff;
+  background-color: #fa824c;
+  border-radius: 20px;
+}
+.container{
+  padding:  0 20px 0 20px;
+}
+#map{
+  border-radius: 1rem;
+  height: 300px;
+  width: 100%;
+  margin-top: 20px;
+}
+/* b2home */
+.b2home{
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color:rgba(155, 180, 179, 0.6);
+  color: white;
+  font-size: 1.5rem;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  display: block;
+  transition: background-color 0.5s ease-in-out;
+  border-radius: 20px;
+}
+.b2home:hover{
+  background-color: #385858;
+}
+
+.cc{
+  display: flex;
+  justify-content: center;
+  background-color:bisque;
+  border-radius: 20px 20px 0 0;
+  height: 200px;
+  gap: 1vw;
+}
+.option{
+  min-width: 185px;
+  width: 200px;
+  height: 30px; /* 修改初始高度 */
+  background-color: #dcfffe;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.5s ease, height 0.5s ease; /* 添加 height 的過渡效果 */
+}
+.option img{
+  width: 100%;
+  height: 70%;
+  object-fit: cover;
+}
+.option h3, .option p{
+  text-align: center;
+}
+.option:hover{
+  transform: translateY(-10px);
+  height: 196px; /* hover 時改變高度 */
+}
+.option:nth-child(odd){
+  transform-origin: left center;
+}
+.option:nth-child(even){
+  transform-origin: right center;
+}
+.option:nth-child(odd):hover{
+  transform: perspective(1000px) rotateY(-10deg) translateY(-10px);
+}
+
+.option:nth-child(even):hover{
+  transform: perspective(1000px) rotateY(10deg) translateY(-10px);
+}
+.link{
+  padding: 5px 10px; 
+  border-radius: 50px; 
+  background-color:lightblue; 
+  text-decoration: none;
+  transition: .3s ease-in-out;
+  font-size: 1.25rem;
+}
+.link:hover{
+  background-color:#385858;
+  color: #fff;
+}
+
+.out{
+  color: #fa824c;
+  padding: 2px;
+  text-decoration: overline underline;
+}
+.out:hover{
+  text-decoration: none;
+}
