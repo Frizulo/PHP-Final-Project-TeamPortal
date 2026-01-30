@@ -1,0 +1,532 @@
+/* 
+可以用 start 找尋頁面使用元素開頭
+
+$color1:#36382e;
+$color2:#fa824c;
+$color3:#dee3c7;
+$color4:#eff1e4;
+$color5:#9bb4b3;
+$color6:#385858;
+
+$radius1: 1.5rem 1.5rem 0 1.5rem;
+$radius2: 1rem;
+$border: 0.125rem;
+$title: 2rem;
+$subtitle: 1.5rem;
+$btn_font: 1.25rem;
+$content: 1rem; */
+
+/* 滾動條改樣式 */
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: #DEE3C780;
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+    background: #9BB4B3;
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #385858;
+    cursor: pointer;
+}
+
+/* 分割線 */
+hr{
+    border: 0;
+    height: 2px;
+    background-image: linear-gradient(to right, rgba(54,56,46,0.75), rgba(54,56,46,0));
+} 
+
+/* 置中 */
+.center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* scroll to top */
+#scroll-to-top-btn{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color:rgba(155, 180, 179, 0.6);
+    color: white;
+    font-size: 24px;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    display: none;
+    transition: background-color 0.5s ease-in-out;
+    border-radius: 20px;
+}
+#scroll-to-top-btn:hover{
+    background-color: #385858;
+}
+
+/* 按鈕 */
+.btn1,
+.btn2,
+.btn3{
+    text-decoration: none;
+    color: #36382E;
+    font-size: 1.25rem;
+    background-color: #9BB4B385;
+    padding: 6px 20px;
+    cursor: pointer;
+    border-radius: 1rem;
+    border: 0.125rem #385858 solid;
+    transition: 0.4s ease;
+}
+.btn1{
+    background-color: #ffffff00;
+}
+.btn1:hover,
+.btn2:hover{
+    background-color: #385858;
+    color: #ffffff;
+}
+.btn3{
+    padding: 10px 2rem;
+    background-color: #DEE3C7;
+}
+.btn3:hover{
+    background-color: #fa824c;
+    color: #fff;
+    border: 0.125rem #fff solid;
+}
+@media screen and (max-width:600px) {
+    .btn1,.btn2{
+        font-size: 1rem;
+    }
+}
+
+footer{
+    background-color: #36382e;
+    color: #fff;
+    padding: 10px 0 20px 0;
+    margin: 10px 0 -10px 0;
+    margin-top: auto;
+    text-align: center; /* 文字置中 */
+    font-size: 1.1rem;
+    border-radius: 20px 20px 0px 0px; /* 圓角 */
+}
+@media screen and (max-width:600px) {
+    footer{
+        font-size: 0.9rem;
+    }
+}
+
+/* b2home */
+.b2home{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color:rgba(155, 180, 179, 0.6);
+    color: white;
+    font-size: 1.5rem;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    display: block;
+    transition: background-color 0.5s ease-in-out;
+    border-radius: 20px;
+}
+.b2home:hover{
+    background-color: #385858;
+}
+
+/* 接下來是用在index的東東 */
+/* start! */
+
+body{
+    margin: 8px;
+    background-color: #eff1e4;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: "Times New Roman","標楷體";
+    cursor:url('pic/mouse_normal.png'),auto; /* 鼠標 */
+}
+
+body:active{
+    cursor: url('pic/mouse_click.png'),auto;
+}
+
+/* 上面打字機 */
+.typewriter{
+    font-size: 2rem;
+    color: #36382E;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 0.15em solid #fa824c;
+}
+.slide-up{
+    animation: slideUp 1s forwards;
+    
+}
+@keyframes slideUp{
+    0%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100%{
+        opacity: 0;
+        transform: translateY(-100%); 
+    }
+}
+@media screen and (max-width:600px) {
+    .typewriter{
+        font-size: 1.5rem;
+    }
+}
+
+/* index nav */
+.nav1{
+    font-size: 1.25rem;
+    user-select: none; /* 這句是不可框文字複製 */
+    background-color:rgba(222, 227, 199, 0.9);
+    padding: 10px 20px;
+    border-radius: 1.5rem 1.5rem 0 1.5rem;
+    box-shadow: 3px 2px 4px rgba(0, 0, 0, 0.25);
+    /* 固定nav位置 */
+    position: -webkit-sticky;
+    position: sticky;
+    z-index: 100;
+    top: 10px;
+    left: 20px;
+    right: 20px;
+    margin-bottom: 16px;
+    /* 控制裡面元素 */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    >div{
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+}
+@media screen and (max-width:600px) {
+    .nav1{
+        font-size: 1rem;
+    }
+    .nav1>div>p{
+        display: none;
+    }
+}
+/* 翻頁豬豬 */
+
+.all{
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+.all>img{
+    width: 100%;
+}
+.image-container{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 200px;
+    height: 200px;
+}
+.image{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 200px;
+    height: 200px;
+    transition: opacity 300ms ease-in-out;
+}
+#image2, #image3{
+    opacity: 0; /* 初始 */
+}
+
+/* topic 橫條 */
+.topic{
+    padding: 15px;
+    text-align: center;
+    background-color: #DEE3C7;
+    margin-bottom: 15px;
+    position: relative;
+}
+.dashed-line{
+    position: absolute;
+    top: 10px;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background-image: repeating-linear-gradient(to right,
+        #36382E,
+        #36382E 35px,
+        #36382E,
+        transparent 35px,
+        transparent 70px
+    );
+}
+.dashed-line2{
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background-image: repeating-linear-gradient(to left,
+        #36382E,
+        #36382E 35px,
+        #36382E,
+        transparent 35px,
+        transparent 70px
+    );
+}
+.topic>p{
+    font-size: 2rem;
+    font-weight:bold;
+}
+@media screen and (max-width:600px) {
+    .topic>p{
+        font-size: 1.5rem;
+    }
+}
+
+/* 單行一圖一文 */
+/*  style="flex-direction: row-reverse;"如果有多個，在偶數項加 */
+.pic-text{
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+}
+.pic-text>.pic{
+    width: 40%;
+    max-width: 300px;
+    padding: 20px;
+    box-sizing: border-box;
+    border: #36382E 6px;
+}
+.pic-text>.text{
+    width: 50%;
+    padding: 20px;
+    box-sizing: border-box;
+    border: #3f442c 6px;
+}
+@media screen and (max-width: 600px) {
+    .pic-text{
+        flex-direction: column; /* 上下排列 */
+    }
+    .pic-text>.text,.pic-text>.pic{
+        width:100vw;
+    }
+}  
+.subtitle{
+    font-size: 2rem;
+    margin-top: 10px;
+    margin-bottom: 0;
+    font-weight: bold;
+}
+.pic-text>.text>p{
+    font-size: 1.25rem;
+    text-indent: 2em;
+    margin-top: 10px;
+    margin-bottom: 0;
+}
+@media screen and (max-width: 600px) {
+    .subtitle{
+        font-size: 1.5rem;
+    }
+    .pic-text>.text>p{
+        font-size: 1rem;
+    }
+}  
+
+
+/* 翻轉卡片 */
+.multiple_cards{
+    gap: 10vw;
+    padding: 0 0 10px 0;
+}
+.card{
+    width: 280px;
+    height: 320px;
+    perspective: 1000px;
+}
+.cover{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d; /* 3D */
+    transition: transform 0.5s; /* 設置轉換過渡效果 */
+}
+.card.flipped .cover{/* 翻過來 */
+    transform: rotateY(-180deg); 
+}
+.front,
+.back{
+    font-size: 1.25rem;
+    line-height: 1.5;
+    flex-direction: column;
+    user-select: none; /* 這句是不可框文字複製 */
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #9BB4B3;
+    border-radius: 1rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.25); /* 書本陰影效果 */
+    backface-visibility: hidden; /* 背面不顯示 */
+}
+.back>h3{
+    border-radius: 0.5rem;
+    text-align: center;
+    background-color: #eff1e4;
+    width: 88%;
+}
+.back{
+    transform: rotateY(180deg);
+}
+@media screen and (max-width:600px) {
+    .multiple_cards{
+        flex-direction: column; /* 上下排列 */
+    }    
+    .card{
+        width: 75%;
+        height: 350px;
+    }
+    .front,
+    .back{
+        font-size: 1rem;
+    }
+}
+/* 有會消失箭頭的酷連結 */
+.link{
+    text-decoration: none;
+    color: #eff1e4;
+    padding: 10px 20px;
+    transition: 0.3s ease-in;
+}
+.link::before{
+    content: '→ ';
+}
+.link::after{
+    content: ' ←';
+}
+.link:hover{
+    color: #36382E;
+    background-color: #eff1e4;
+    border-radius: 20px;
+}
+.link:hover::before,
+.link:hover::after {
+    display: none;
+}
+
+/* 輪播 */
+.carousel{
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.slides{
+    display: flex;
+}
+.slide{
+    width: 100%;
+    transition: transform 0.5s ease;
+    border-radius: 2rem;
+}
+.carousel>button{
+    color: #e3967290;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 3rem;
+}
+.prev{
+    left: 0;
+}
+.next{
+    right: 0;
+}
+
+
+/* bulletin */
+#date-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #month, #day, #weekday {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+.bd{
+    font-size: 1.25rem;
+    padding: 10px 20px;
+    border-radius: 1.5rem 1.5rem 0 1.5rem;
+    box-shadow: 3px 2px 4px rgba(0, 0, 0, 0.25);
+    /* 控制裡面元素 */
+    display: flex;
+    align-items: center;
+    text-align: center;
+    background-color: #dee3c7;
+}
+
+.changeliner {
+    position: relative;
+    color: #333;
+    text-transform: uppercase;
+    transition: all 500ms cubic-bezier(0.77, 0, 0.175, 1);
+    cursor: pointer;
+    user-select: none;
+}
+
+.changeliner:before,
+.changeliner:after {
+    content: '';
+    position: absolute;
+    transition: inherit;
+    z-index: -1;
+}
+
+.changeliner:hover{
+    transition-delay: .5s;
+}
+
+.changeliner:hover:before {
+    transition-delay: 0s;
+}
+
+.changeliner:hover:after {
+    background: #9bb4b3;
+    transition-delay: .35s;
+}
+
+.changeliner:before,
+.changeliner:after {
+    top: 0;
+    width: 0;
+    height: 100%;
+}
+.changeliner:before {
+    right: 0;
+    border: 1px solid #9bb4b3;
+    border-left: 0;
+    border-right: 0;
+}
+.changeliner:after {
+    left: 0;
+}
+.changeliner:hover:before,
+.changeliner:hover:after {
+    width: 100%;
+}
