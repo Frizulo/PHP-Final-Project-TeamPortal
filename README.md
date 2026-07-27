@@ -1,4 +1,8 @@
 # PHP 動態網站專案
+<img width="1684" height="1221" alt="image" src="https://github.com/user-attachments/assets/8ba86696-8e8b-4a47-8911-c6ad7ac76452" />
+
+- 包含公開與登入後功能，
+- 橘色部分是僅限管理員的功能，透過身分篩選呈顯分頁選項差異
 
 ## 📌 專案簡介
 本專案為課程期末專題，使用 PHP 與 MySQL 建立一個具備會員系統的動態網站。
