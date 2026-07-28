@@ -6,8 +6,6 @@
 
 本專案為網頁設計課程期末專題，以「程式培訓隊」為情境，整合公開頁面、會員功能及管理員後台。系統依登入身分顯示可用功能，管理員可維護公告及審核申請，一般會員可參與討論並管理個人資料。
 
-> 下列圖片擷取自期末成果報告。為避免遺漏畫面，本版本保留完整投影片，不再裁切固定的左上角區域。
-
 ## 系統畫面
 
 ### 1. 系統架構
@@ -126,21 +124,6 @@ PHP-Final-Project-TeamPortal-main/
 ├── style.css
 ├── LICENSE
 └── README.md
-```
-
-## 安裝方式
-
-1. 安裝 XAMPP、Apache、PHP 與 MySQL。
-2. 將專案資料夾放入 `htdocs`。
-3. 建立專案所需的 MySQL 資料庫及資料表。
-4. 修改 `db/01_conn.php` 的資料庫連線設定，並使用 `utf8mb4`。
-5. 啟動 Apache 與 MySQL。
-6. 使用瀏覽器開啟專案網址。
-
-範例：
-
-```text
-http://localhost/PHP-Final-Project-TeamPortal-main/
 ```
 
 ## 資料庫注意事項
